@@ -97,8 +97,3 @@ class Evaluacion(Model):
 
     def __repr__(self):
         return f"{self.tipo_evaluacion}: {self.nota}"
-
-AuditMixin will add automatic timestamp of created and modified by who
-
-
-"""
