@@ -23,3 +23,5 @@ appbuilder.add_view(PeriodoView, "Periodos", category="Gestión CEA", icon="fa-c
 appbuilder.add_view(TallerView, "Talleres", category="Gestión CEA", icon="fa-book")
 appbuilder.add_view(InscripcionView, "Inscripciones", category="Gestión CEA", icon="fa-file-signature")
 appbuilder.add_view(EvaluacionView, "Evaluaciones", category="Gestión CEA", icon="fa-star")
+from app.reports import ReportesView
+appbuilder.add_view(ReportesView, "Reportes", category="Gestión CEA", icon="fa-chart-bar")

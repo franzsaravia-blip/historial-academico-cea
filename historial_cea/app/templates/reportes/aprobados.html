@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aprobados y Reprobados</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .aprobado { color: green; font-weight: bold; }
+        .reprobado { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Listado de Estudiantes</h2>
+    <table>
+        <tr><th>Nombre</th><th>Promedio</th><th>Estado</th></tr>
+        {% for d in datos %}
+        <tr>
+            <td>{{ d[0] }} {{ d[1] }}</td>
+            <td>{{ d[2] | round(2) }}</td>
+            <td>
+                {% if d[2] >= 51 %}
+                <span class="aprobado">APROBADO</span>
+                {% else %}
+                <span class="reprobado">REPROBADO</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/reportes/">← Volver a reportes</a>
+</body>
+</html>
