@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Historial Académico</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h2>Historial Académico</h2>
+    <form method="GET">
+        <label>Seleccione Participante: </label>
+        <select name="participante_id">
+            <option value="">-- Seleccione --</option>
+            {% for p in participantes %}
+            <option value="{{ p.id }}" {% if participante and participante.id == p.id %}selected{% endif %}>{{ p.nombres }} {{ p.apellidos }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+    <hr>
+    {% if participante %}
+    <h4>Notas de: {{ participante.nombres }}</h4>
+    <table>
+        <tr><th>Tipo de Evaluación</th><th>Nota</th><th>Observaciones</th></tr>
+        {% for d in datos %}
+        <tr><td>{{ d.tipo_evaluacion }}</td><td>{{ d.nota }}</td><td>{{ d.observaciones }}</td></tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+    <a href="/reportes/">← Volver a reportes</a>
+</body>
+</html>
