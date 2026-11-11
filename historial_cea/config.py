@@ -107,3 +107,8 @@ IMG_UPLOAD_URL = "/static/uploads/"
 # APP_THEME = "spacelab.css"
 # APP_THEME = "united.css"
 # APP_THEME = "yeti.css"
+# Nombre de la aplicación
+APP_NAME = "Historial Académico CEA"
+
+# Ícono de la aplicación (un birrete de graduación)
+APP_ICON = "https://cdn-icons-png.flaticon.com/512/3135/3135810.png"
